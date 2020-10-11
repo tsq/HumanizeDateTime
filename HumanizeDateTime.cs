@@ -12,7 +12,7 @@ namespace Tsq.HumanizeDateTime
             const int DAY = 24 * HOUR;
             const int MONTH = 30 * DAY;
 
-            var ts = new TimeSpan(DateTime.UtcNow.Ticks - dateTime.Ticks);
+            var ts = new TimeSpan(DateTime.Now.Ticks - dateTime.Ticks);
             double delta = Math.Abs(ts.TotalSeconds);
             if (delta < 1 * MINUTE)
                 return ts.Seconds == 1 ? "1秒前" : ts.Seconds + "秒前";
